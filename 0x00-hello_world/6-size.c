@@ -11,10 +11,10 @@ int main(void)
 	int sizeint = sizeof(int);
 	int sizechar = sizeof(char);
 	int sizelong = sizeof(long);
-	int sizelong2 = sizeof(unsigned long);
+	int sizelong2 = sizeof(long long);
 	int sizefloat = sizeof(float);
 
-	printf("Size of char: %d byte(s)\n", sizechar);
+	printf("Size of a char: %d byte(s)\n", sizechar);
 	printf("Size of an int: %d byte(s)\n", sizeint);
 	printf("Size of a long int: %d byte(s)\n", sizelong);
 	printf("Size of a long long int: %d byte(s)\n", sizelong2);
