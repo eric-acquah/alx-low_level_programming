@@ -2,8 +2,8 @@
 
 /**
  *_strcmp - compare two strings
- *@str1: Points to the first string
- *@str2: Points to the second string
+ *@s1: Points to the first string
+ *@s2: Points to the second string
  *Return: (-1) if str1 < str2; (1) if str1 > str2 (0) if both match
  */
 
@@ -15,11 +15,11 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*(s1 + i) < *(s2 + i))
 		{
-			return (-15);
+			return (-1);
 		}
 		else if (*(s1 + i) > *(s2 + i))
 		{
-			return (15);
+			return (1);
 		}
 	}
 
