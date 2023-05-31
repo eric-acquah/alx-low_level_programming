@@ -24,4 +24,6 @@ char *_strcat(char *dest, char *src)
 		str++;
 	}
 	*(str + count) = '\0';
+
+	return (dest);
 }
