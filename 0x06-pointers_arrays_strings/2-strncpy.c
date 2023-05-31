@@ -24,7 +24,7 @@ char *_strncpy(char *dest, char *src, int n)
 		*(dest + j) = *(str + j);
 	}
 
-	*(dest + j) = '\0';
+	/* *(dest + j) = '\0'; */
 
 
 	for (k = count; k < n; k++)
