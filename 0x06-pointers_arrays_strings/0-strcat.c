@@ -21,7 +21,7 @@ char *_strcat(char *dest, char *src)
 	for (j = 0; *(src + j) != '\0'; j++)
 	{
 		*(str + (count)) = *(src + j);
-		*str++;
+		str++;
 	}
 	*(str + count) = '\0';
 }
