@@ -10,10 +10,9 @@ void rev_string(char *s)
 {
 	int size = 0;
 	int i, j;
-	char *src = s;
 	char tmp;
 
-	for (i = 0; *(src + i) != '\0'; i++)
+	for (i = 0; *(s + i) != '\0'; i++)
 	{
 		size++;
 	}
@@ -21,9 +20,9 @@ void rev_string(char *s)
 
 	for (j = 0; j < size; j++)
 	{
-		tmp = *(src + j);
-		*(src + size) = *(src + j);
-		*(src + size) = tmp;
+		tmp = *(s + j);
+		*(s + size) = *(s + j);
+		*(s + size) = tmp;
 		size--;
 	}
 }
