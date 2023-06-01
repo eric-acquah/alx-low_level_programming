@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- *print_rev - Print strings in reverse
+ *rev_string - reverse strings
  *
  *@s: Stirng pointer argument
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int size = 0;
 	int i, j;
