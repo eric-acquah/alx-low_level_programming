@@ -16,12 +16,12 @@ void rev_string(char *s)
 	{
 		size++;
 	}
-	/* size = size - 1; */
+	size = size - 1;
 
 	for (j = 0; j < size; j++)
 	{
 		tmp = *(s + j);
-		*(s + size) = *(s + j);
+		*(s + j) = *(s + size);
 		*(s + size) = tmp;
 		size--;
 	}
