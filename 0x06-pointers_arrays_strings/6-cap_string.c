@@ -10,11 +10,6 @@ char *cap_string(char *str)
 {
 	int i;
 
-
-	/*Capitalize the first character of the string*/
-	if (*str >= 'a' && *str <= 'z')
-		*str -= 32;
-
 	/*Loop through the entire string*/
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
@@ -27,11 +22,11 @@ char *cap_string(char *str)
 		    *(str + i) == ')' || *(str + i) == '{' ||
 		    *(str + i) == '}')
 		{
-
-			/*Convert all tabs into sapce*/
-			if (*(str + i) == '\t')
-				*(str + i) = ' ';
-
+			/*
+			 *Convert all tabs into sapce
+			 *if (*(str + i) == '\t')
+			 *	*(str + i) = ' ';
+			*/
 
 			/*If the following value is lowercase convert to upper*/
 			if (*(str + (i + 1)) >= 'a' && *(str + (i + 1)) <= 'z')
