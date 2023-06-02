@@ -27,9 +27,11 @@ char *cap_string(char *str)
 		    *(str + i) == '}'
 			)
 		{
-			/*Convert all tabs into sapce*/
-			if (*(str + i) == '\t')
-				*(str + i) = ' ';
+			/**
+			 *Convert all tabs into sapce
+			 *if (*(str + i) == '\t')
+			 *(str + i) = ' ';
+			*/
 
 			/*If the following value is lowercase convert to upper*/
 			if (*(str + i) >= 'a' && *(str + i) <= 'z')
