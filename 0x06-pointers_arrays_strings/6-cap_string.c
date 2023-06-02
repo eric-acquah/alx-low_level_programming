@@ -10,9 +10,11 @@ char *cap_string(char *str)
 {
 	int i;
 
-	/*Capitalize the first character of the string*/
-	if (*str >= 'a' && *str <= 'z')
+	/*
+	 *Capitalize the first character of the string
+	*if (*str >= 'a' && *str <= 'z')
 		*str -= 32;
+		*/
 
 	/*Loop through the entire string*/
 	for (i = 0; *(str + i) != '\0'; i++)
