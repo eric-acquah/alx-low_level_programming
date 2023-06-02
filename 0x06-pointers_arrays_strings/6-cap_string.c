@@ -25,13 +25,12 @@ char *cap_string(char *str)
 		    *(str + i) == '"' || *(str + i) == '\n' ||
 		    *(str + i) == '\t' || *(str + i) == '(' ||
 		    *(str + i) == ')' || *(str + i) == '{' ||
-		    *(str + i) == '}'
-			)
+		    *(str + i) == '}')
 		{
 
 			/*Convert all tabs into sapce*/
 			if (*(str + i) == '\t')
-				(str + i) = ' ';
+				*(str + i) = ' ';
 
 
 			/*If the following value is lowercase convert to upper*/
