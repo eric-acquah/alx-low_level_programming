@@ -10,18 +10,16 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i;
-	char *str1 = s1;
-	char *str2 = s2;
 
-	for (i = 0; *(str1 + i) != '\0' && *(str2 + i) != '\0'; i++)
+	for (i = 0; *(s1 + i) != '\0' && *(s2 + i) != '\0'; i++)
 	{
-		if (*(str1 + i) < *(str2 + i))
+		if (*(s1 + i) < *(s2 + i))
 		{
-			return (-1);
+			return (*(s1 + i) - *(s2 + i));
 		}
-		else if (*(str1 + i) > *(str2 + i))
+		else if (*(s1 + i) > *(s2 + i))
 		{
-			return (1);
+			return (*(s1 + i) + *(s2 + i));
 		}
 	}
 
