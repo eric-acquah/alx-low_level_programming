@@ -19,7 +19,7 @@ char *_strchr(char *s, char c)
 	}
 
 	/*Loop over string to find a match*/
-	for (i = 0; i <= count; i++)
+	for (i = 0; i < count; i++)
 	{
 		/*If match is found return the string to the string pointer*/
 		if (*(s + i) == c)
