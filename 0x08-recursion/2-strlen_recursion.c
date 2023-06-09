@@ -18,5 +18,5 @@ int _strlen_recursion(char *s)
 	}
 
 	/*Recursive case; return the function plus count*/
-	return (_strlen_recursion((s + (i + 1)) + count));
+	return (_strlen_recursion(s + (i + 1)) + count);
 }
