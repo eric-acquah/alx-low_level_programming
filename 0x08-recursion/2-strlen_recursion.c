@@ -14,7 +14,7 @@ int _strlen_recursion(char *s)
 	/*Base case; return 0 if value is null*/
 	if (*(s + i) == '\0')
 	{
-		return (count);
+		return (0);
 	}
 
 	/*Recursive case; return the function plus count*/
