@@ -14,14 +14,14 @@ char *str_concat(char *str1, char *str2)
 	int len1, len2;
 	char *strbuf;
 
-	len1 = str_len(str1);
-	len2 = str_len(str2);
-	size = len1 + len2;
-
 	if (str1 == NULL)
 		len1 = 0;
 	else if (str2 == NULL)
 		len2 = 0;
+
+	len1 = str_len(str1);
+	len2 = str_len(str2);
+	size = len1 + len2;
 
 	strbuf = (char *)malloc(sizeof(char) * (size + 1));
 
