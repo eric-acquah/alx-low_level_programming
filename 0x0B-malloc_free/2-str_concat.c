@@ -25,17 +25,11 @@ char *str_concat(char *str1, char *str2)
 
 	for (i = 0; i < len1; i++)
 	{
-		if (str1 == NULL)
-			str1 = " ";
-
 		*(strbuf + i) = *(str1 + i);
 	}
 
 	for (j = 0; j < len2; j++)
 	{
-		if (str2 == NULL)
-			str2 = " ";
-
 		*(strbuf + (len1 + j)) = *(str2 + j);
 	}
 
