@@ -14,13 +14,6 @@ char *str_concat(char *str1, char *str2)
 	int len1, len2;
 	char *strbuf;
 
-	if (str1 == NULL)
-	{
-		str1 = "";
-	}
-	else if (str2 == NULL)
-		str2 = "";
-
 	len1 = str_len(str1);
 	len2 = str_len(str2);
 	size = len1 + len2;
@@ -29,6 +22,13 @@ char *str_concat(char *str1, char *str2)
 
 	if (strbuf == NULL)
 		return (NULL);
+
+	if (str1 == NULL)
+	{
+		str1 = "";
+	}
+	else if (str2 == NULL)
+		str2 = "";
 
 	for (i = 0; i < len1; i++)
 		*(strbuf + i) = *(str1 + i);
