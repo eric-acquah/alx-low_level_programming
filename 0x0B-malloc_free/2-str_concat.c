@@ -15,8 +15,12 @@ char *str_concat(char *str1, char *str2)
 	char *strbuf;
 	char *empty;
 
-	if (str1 == NULL || str2 == NULL)
-		return (empty);
+	if (str1 == NULL)
+	{
+		*str1 = "";
+	}
+	else if (str2 == NULL)
+		*str2 = "";
 
 	len1 = str_len(str1);
 	len2 = str_len(str2);
