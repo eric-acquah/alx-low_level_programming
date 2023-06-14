@@ -17,10 +17,10 @@ char *str_concat(char *str1, char *str2)
 
 	if (str1 == NULL)
 	{
-		*str1 = "";
+		str1 = "";
 	}
 	else if (str2 == NULL)
-		*str2 = "";
+		str2 = "";
 
 	len1 = str_len(str1);
 	len2 = str_len(str2);
