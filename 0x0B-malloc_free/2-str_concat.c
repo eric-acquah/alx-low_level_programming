@@ -13,9 +13,9 @@ char *str_concat(char *str1, char *str2)
 	int i, j, size;
 	int len1, len2;
 	char *strbuf;
-	char *empty = {""};
+	char *empty = "";
 
-	if (str1 == NULL || str2 == NULL)
+	if (*str1 == NULL || *str2 == NULL)
 		return (empty);
 
 	len1 = str_len(str1);
