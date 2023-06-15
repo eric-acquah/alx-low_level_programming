@@ -13,4 +13,6 @@ int str_len(char *str);
 
 int **alloc_grid(int height, int width);
 
+void free_grid(int **grid, int height);
+
 #endif
