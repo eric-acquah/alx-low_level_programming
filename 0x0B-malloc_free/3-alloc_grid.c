@@ -27,7 +27,7 @@ int **alloc_grid(int width, int height)
 		{
 			/*If true, free all spaces previously allocated*/
 			while (i > 0)
-				free(arr[--i]);
+				free(arr[i--]);
 		}
 	}
 	/*Initialize 2d array elements spaces with '0'*/
