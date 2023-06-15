@@ -1,18 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
  *alloc_grid - Create a 2d array in a newly assigned memory space
  *@width: Number of 2d array coloums
  *@height: Number of 2d array rows
  *Return: Pointer to the created 2d array; return NULL if malloc fails
  */
-
 int **alloc_grid(int width, int height)
 {
 	int i, j, k;
 	int **arr;
 
+	if (width == 0 || height == 0)
+		return (NULL);
 	/*Allocate space for the row pointers of the 2d array*/
 	arr = (int **)malloc(sizeof(int *) * height);
 	/*Check if malloc did not fail*/
