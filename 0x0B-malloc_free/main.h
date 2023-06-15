@@ -11,4 +11,6 @@ char *str_concat(char *str1, char *str2);
 
 int str_len(char *str);
 
+int **alloc_grid(int height, int width);
+
 #endif
