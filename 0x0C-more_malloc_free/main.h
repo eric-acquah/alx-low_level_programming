@@ -9,4 +9,6 @@ char *string_nconcat(char *str1, char *str2, unsigned int n);
 
 int str_len(char *str);
 
+void *_calloc(unsigned int nmemb, unsigned int size);
+
 #endif
