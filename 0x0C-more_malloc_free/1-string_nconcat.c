@@ -31,7 +31,7 @@ char *string_nconcat(char *str1, char *str2, unsigned int n)
 	}
 
 	size = len1 + len2; /*get the total lenght that the new str will take*/
-	str3 = (char *)malloc(sizeof(char) + (size + 1)); /*alloc enough space*/
+	str3 = (char *)malloc(sizeof(char) * (size + 1)); /*alloc enough space*/
 
 	if (str3 == NULL) /*Error_check:if malloc fails return null to pointer*/
 		return (NULL);
