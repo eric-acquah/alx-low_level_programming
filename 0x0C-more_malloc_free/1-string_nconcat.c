@@ -41,7 +41,7 @@ char *string_nconcat(char *str1, char *str2, unsigned int n)
 	for (k = 0; k < len2; k++)
 		*(str3 + (len1 + k)) = *(str2 + k); /*then append str2 to str1*/
 
-	*(str3 + size) = '\0'; /*adding null terminating byte*/
+	*(str3 + (size + 1)) = '\0'; /*adding null terminating byte*/
 
 	return (str3); /*return new string to pointer*/
 }
