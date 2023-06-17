@@ -23,7 +23,7 @@ char *string_nconcat(char *str1, char *str2, unsigned int n)
 	else
 		len2 = str_len(str2);
 
-	if (!(n >= str2)) /*if str2 > n, get only the 1st n bytes of str2*/
+	if (!(n >= len2)) /*if str2 > n, get only the 1st n bytes of str2*/
 	{
 		for (i = 0; i < n && *(str2 + i) != '\0';)
 			i++;
@@ -31,7 +31,7 @@ char *string_nconcat(char *str1, char *str2, unsigned int n)
 	}
 
 	size = len1 + len2; /*get the total lenght that the new str will take*/
-	str3 = (char *)malloc(sizeof(char) + size++); /*allocate enough space*/
+	str3 = (char *)malloc(sizeof(char) + (size + 1)); /*alloc enough space*/
 
 	if (str3 == NULL) /*Error_check:if malloc fails return null to pointer*/
 		return (NULL);
@@ -41,7 +41,7 @@ char *string_nconcat(char *str1, char *str2, unsigned int n)
 	for (k = 0; k < len2; k++)
 		*(str3 + (len1 + k)) = *(str2 + k); /*then append str2 to str1*/
 
-	*(str3 + (size + 1)) = '\0'; /*adding null terminating byte*/
+	*(str3 + size) = '\0'; /*adding null terminating byte*/
 
 	return (str3); /*return new string to pointer*/
 }
