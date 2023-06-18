@@ -10,15 +10,22 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int i;
 	void *allo;
+	char *init;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0)/*check if arg values are zero*/
 		return (NULL);
 
-	allo = malloc(nmemb * size);
+	allo = malloc(nmemb * size);/*allocate memory to the void pointer*/
 
-	if (allo == NULL)
+	if (allo == NULL)/*check if malloc failed or not*/
 		return (NULL);
 
-	return (allo);
+	init = (char *)allo;/*typecast void pointer to enable dereferrancing*/
+
+	for (i = 0; i < nmemb; i++)
+		init[i] = 0;/*initialize memory blocks with zero*/
+
+	return (allo); /*return void pointer*/
 }
