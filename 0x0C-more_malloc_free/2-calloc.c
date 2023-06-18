@@ -25,7 +25,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (allo == NULL)/*check if malloc failed or not*/
 		return (NULL);
 
-	init = (char *)allo;/*typecast void pointer to enable dereferrancing*/
+	/*typecast void pointer to enable the initialization of memory*/
+	init = (unsigned char *)allo;
 
 	for (i = 0; i < capacity; i++)
 		init[i] = 0;/*initialize memory blocks with zero*/
