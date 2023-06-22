@@ -7,7 +7,7 @@
  *@array: array to search through for match
  *@size: number of array elements
  *@cmp: function pointer to compare function
- *Return: (1) if size is 0, (-1) if no match is found,
+ *Return: (-1) if size is 0, (-1) if no match is found,
  *index of match if succesful
  */
 
@@ -20,7 +20,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		exit(1);
 
 	if (size <= 0)
-		return (1);
+		return (-1);
 	/**/
 
 	for (indx = 0; indx < size; indx++)
