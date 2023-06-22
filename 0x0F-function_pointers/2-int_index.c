@@ -24,7 +24,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	/**/
 	else
 	{
-		for (indx = 0; indx < size; i++)
+		for (indx = 0; indx < size; indx++)
 		{
 			cmp_value = cmp(array[indx]);/*store return val of cmp*/
 
