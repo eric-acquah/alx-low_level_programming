@@ -12,6 +12,6 @@
 void print_name(char *name, void (*f)(char *))
 {
 	if ((*f) == NULL)
-		exit(1);
+		exit(1);/*Don't run if pointer is pointing to nothing*/
 	(*f)(name);
 }
