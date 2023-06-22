@@ -19,18 +19,16 @@ int int_index(int *array, int size, int (*cmp)(int))
 	if ((*cmp) == NULL || array == NULL)
 		exit(1);
 
-	else if (size <= 0)
+	if (size <= 0)
 		return (1);
 	/**/
-	else
+
+	for (indx = 0; indx < size; indx++)
 	{
-		for (indx = 0; indx < size; indx++)
-		{
-			cmp_value = cmp(array[indx]);/*store return val of cmp*/
+		cmp_value = cmp(array[indx]);/*store return val of cmp*/
 
 			if (cmp_value > 0)
 				return (indx);/*if value is 1; return index*/
-		}
 	}
 
 	return (-1);/*return this if no match was found*/
