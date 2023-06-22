@@ -10,5 +10,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	/*Don't call-back if function pointer points to NULL*/
+	if (!((*f) == NULL))
+		(*f)(name); /*else pass str as argument to function call back*/
 }
