@@ -17,7 +17,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	/*Handel exceptions*/
 	if ((*cmp) == NULL || array == NULL)
-		exit(1);
+		return (-1);
 
 	if (size <= 0)
 		return (-1);
