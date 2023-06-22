@@ -7,7 +7,7 @@
  *@array: array to search through for match
  *@size: number of array elements
  *@cmp: function pointer to compare function
- *Return: (1) if size is 0; (-1) if no match is found;
+ *Return: (1) if size is 0, (-1) if no match is found,
  *index of match if succesful
  */
 
