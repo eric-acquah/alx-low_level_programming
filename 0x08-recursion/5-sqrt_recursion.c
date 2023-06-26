@@ -6,6 +6,8 @@
  *Return: natural square root of n
  */
 
+int cycle(int y, int n);
+
 int _sqrt_recursion(int n)
 {
 	int x = 1;
