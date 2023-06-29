@@ -2,7 +2,7 @@
 #define STRUCT
 
 /**
- *dog - store dog info
+ *struct dog - store dog info
  *@name: name of dog
  *@age: age of dog
  *@owner: client name
