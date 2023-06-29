@@ -1,6 +1,18 @@
-#include <stdio.h>
-#include "dog.h"
 #include "main.h"
+
+/**
+ *struct dog - store dog info
+ *@name: name of dog
+ *@age: age of dog
+ *@owner: client name
+ */
+
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
 
 
 /**
