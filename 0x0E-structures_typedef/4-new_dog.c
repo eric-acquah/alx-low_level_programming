@@ -41,31 +41,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name_copy == NULL || owner_copy == NULL)
 		return (NULL);
 
-	name_copy = _strcpy(name_copy, link->name);
-	owner_copy = _strcpy(owner_copy, link->owner);
+	name_copy = link->name;
+	owner_copy = link->owner;
 
 	return (link);
-}
-
-/**
- *_strcpy - copy strings from src to dest
- *@dest: destination string
- *@src: source string
- *Return: pointer to dest
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-
-	if (dest == NULL || src == NULL)
-		return (NULL);
-
-	for (i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-
-	return (dest);
 }
 
 
