@@ -1,5 +1,6 @@
 #ifndef STRUCT
 #define STRUCT
+#include <stdlib.h>
 
 /**
  *struct dog - store dog info
