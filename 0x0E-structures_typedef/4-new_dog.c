@@ -27,16 +27,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	link->name = (char *)malloc(sizeof(char) * (name_len + 1));
 	if (link->name == NULL)
 	{
-		free(link);
-		/* free(link->name); */
 		return (NULL);
 	}
 
 	link->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
 	if (link->owner == NULL)
 	{
-		/* free(link); */
-		free(link->owner);
+		free(link);
+		free(link->name);/*By now owner failed and so we have to free name*/
 		return (NULL);
 	}
 
