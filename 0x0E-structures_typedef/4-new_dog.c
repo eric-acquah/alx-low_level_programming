@@ -18,10 +18,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	link = (dog_t *)malloc(sizeof(dog_t));
 
 	if (link == NULL)
-	{
-		free(link);
 		return (NULL);
-	}
 
 	name_len = _strlen(name);/*getting lenght of the strings*/
 	owner_len = _strlen(owner);
@@ -30,11 +27,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	link->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
 
 	if (link->name == NULL || link->owner == NULL)
-	{
-		free(link->name);
-		free(link->owner);
 		return (NULL);
-	}
 
 	/*Assign values to members*/
 	link->name = name;
@@ -46,11 +39,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	owner_copy = (char *)malloc(sizeof(char) * (owner_len + 1));
 
 	if (name_copy == NULL || owner_copy == NULL)
-	{
-		free(name_copy);
-		free(owner_copy);
 		return (NULL);
-	}
 
 	name_copy = _strcpy(name_copy, link->name);
 	owner_copy = _strcpy(owner_copy, link->owner);
