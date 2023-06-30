@@ -10,7 +10,6 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	/* char *name, *owner; */
 	int name_len, owner_len;
 	dog_t *link;
 
@@ -25,20 +24,27 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	link->name = (char *)malloc(sizeof(char) * (name_len + 1));
 	if (link->name == NULL)
+	{
+		free(link->name);
+		free(link);
 		return (NULL);
+	}
 
 	link->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
 	if (link->owner == NULL)
+	{
+		free(link->owner);
+		free(link);
 		return (NULL);
+	}
 
 	/*Assign values to members*/
-	link->name = name;
-	link->owner = owner;
+	_strcpy(link->name, name);
+	_strcpy(link->owner, owner);
 	link->age = age;
 
 	return (link);
 }
-
 
 /**
  *_strlen - get the lenght of a string
@@ -54,4 +60,25 @@ int _strlen(char *str)
 		count++;
 
 	return (count);
+}
+
+/**
+ *_strcpy - copy strings from src to dest
+ *@dest: destination string
+ *@src: source string
+ *Return: pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	if (dest == NULL || src == NULL)
+		return (NULL);
+
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+
+	return (dest);
 }
