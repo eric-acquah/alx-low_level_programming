@@ -41,8 +41,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 	_strcpy(name_copy, link->name);
 	_strcpy(owner_copy, link->owner);
 
-	printf("name copy: %s\n", name_copy);
-	printf("owner copy: %s\n", owner_copy);
-
 	return (link);
 }
