@@ -1,5 +1,5 @@
 #include "dog.h"
-#include "utility_functions.h"
+
 /**
  *new_dog - create new dog database
  *@name: pointer to dog name

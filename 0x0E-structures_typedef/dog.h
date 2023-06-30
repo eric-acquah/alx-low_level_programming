@@ -2,6 +2,7 @@
 #define STRUCT
 #include <stdlib.h>
 #include <stdio.h>
+#include "utility_functions.h"
 
 /**
  *struct dog - store dog info
