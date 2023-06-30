@@ -10,7 +10,7 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *name_copy, *owner_copy;
+	/* char *name, *owner; */
 	int name_len, owner_len;
 	dog_t *link;
 
@@ -24,25 +24,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	owner_len = _strlen(owner);
 
 	link->name = (char *)malloc(sizeof(char) * (name_len + 1));
-	link->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
+	if (link->name == NULL)
+		return (NULL);
 
-	if (link->name == NULL || link->owner == NULL)
+	link->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
+	if (link->owner == NULL)
 		return (NULL);
 
 	/*Assign values to members*/
 	link->name = name;
 	link->owner = owner;
 	link->age = age;
-
-	/*store a copy of owner and name string*/
-	name_copy = (char *)malloc(sizeof(char) * (name_len + 1));
-	owner_copy = (char *)malloc(sizeof(char) * (owner_len + 1));
-
-	if (name_copy == NULL || owner_copy == NULL)
-		return (NULL);
-
-	name_copy = link->name;
-	owner_copy = link->owner;
 
 	return (link);
 }
