@@ -38,6 +38,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	name_copy = (char *)malloc(sizeof(char) * (name_len + 1));
 	owner_copy = (char *)malloc(sizeof(char) * (owner_len + 1));
 
+	if (name_copy == NULL || owner_copy == NULL)
+		return (NULL);
+
 	_strcpy(name_copy, link->name);
 	_strcpy(owner_copy, link->owner);
 
