@@ -10,6 +10,8 @@ size_t print_list(list_t *h)
 {
 	size_t counter = 0;
 
+	if (h == NULL)
+		exit(1);
 	while (h != 0)
 	{
 		if (h->str == NULL)
