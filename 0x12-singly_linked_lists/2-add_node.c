@@ -12,9 +12,6 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *nxt_node;
 
-	if (*head == NULL)
-		return (NULL);
-
 	nxt_node = (list_t *)malloc(sizeof(list_t));
 	if (nxt_node == NULL)
 		return (NULL);
