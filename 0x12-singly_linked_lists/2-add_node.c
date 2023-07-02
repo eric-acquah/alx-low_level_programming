@@ -22,6 +22,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(nxt_node);
 		return (NULL);
 	}
+	nxt_node->len = strlen(str);
 
 	nxt_node->next = *head;
 	*head = nxt_node;
