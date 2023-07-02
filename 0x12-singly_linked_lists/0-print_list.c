@@ -6,7 +6,7 @@
  *Return: number of node
  */
 
-size_t print_list(list_t *h)
+size_t print_list(const list_t *h)
 {
 	size_t counter = 0;
 
@@ -14,8 +14,7 @@ size_t print_list(list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			h->str = "[0] (nil)";
-			printf("%s\n", h->str);
+			printf("[0] (nil)\n");
 		}
 		else
 		{
