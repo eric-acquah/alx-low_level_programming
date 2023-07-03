@@ -16,7 +16,7 @@ void print_all(const char * const format, ...)
 	if (format == NULL)
 	{
 		printf("%c", '\0');
-		exit(1);
+		return;
 	}
 	while (format[idx] != '\0')
 	{
