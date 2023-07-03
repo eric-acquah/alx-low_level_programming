@@ -44,7 +44,7 @@ void print_all(const char * const format, ...)
 			}
 			idx++;
 		}
+	}
 		printf("\n");
 		va_end(specifier);
-	}
 }
