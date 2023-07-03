@@ -1,4 +1,6 @@
-	;print text to standard output
+	;;  Assemble and link with:
+	;;  nasm -f elf64 hello.asm && gcc -o hello hello.o
+
 
 	section .data
 	str db "Hello, Holberton", 0 ;str = variable that holds the string
