@@ -8,7 +8,7 @@
 	extern printf		;printf is an external function to this program
 
 	global main		;main = label that marks entery point of progam
-	main:
+main:
 	sub rsp, 8		;allocate 8bytes to stack pointer
 
 	mov rdi, specifier	;loading specifier as arg to printf
