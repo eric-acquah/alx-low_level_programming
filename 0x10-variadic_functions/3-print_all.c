@@ -14,7 +14,10 @@ void print_all(const char * const format, ...)
 
 	va_start(specifier, format);
 	if (format == NULL)
+	{
+		printf("%c", '\0');
 		exit(1);
+	}
 	while (format[idx] != '\0')
 	{
 		if (idx + 1 > 1)
