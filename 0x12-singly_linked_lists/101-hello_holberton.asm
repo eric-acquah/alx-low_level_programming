@@ -1,25 +1,23 @@
-	;;  Assemble and link with:
-	;;  nasm -f elf64 hello.asm && gcc -o hello hello.o
+	;;  Declare some constants
+	SECTION .data
+	msg:	    db      "Hello, Holberton", 10 ; string to print, 10 is newline
+	len:	    equ     $ - msg		   ; The length of the string
 
+	;;  Declare the text section
+	SECTION .text
+	global  main
 
-	section .data
-	str db "Hello, Holberton", 0 ;str = variable that holds the string
-	specifier db "%s", 10, 0     ;specifier = format string specifier
-
-	section .text
-	extern printf		;printf is an external function to this program
-
-	global main		;main = label that marks entery point of progam
+	;;  The main function
 main:
-	sub rsp, 16		;allocate 8bytes to stack pointer
+	;;  Prepare the arguments for printf
+	mov     rdi, msg	; First argument is the message
+	mov     rsi, len	; Second argument is the length
+	mov     rax, 0	; No floating point arguments
 
-	mov rdi, specifier	;loading specifier as arg to printf
-	mov rsi, str		;loading str as the other argument to printf
-	xor rax, rax		;clears 'rax' register to 0
-	call printf		;make a call to printf
+	;;  Call printf
+	call    printf
 
-	add rsp, 16		;dellocate the 8bytes allocated before
-
-	mov eax, 0x60		;perform a graceful exit of the program
-	xor edi, edi
-	syscall			;invoke the system call
+	;;  Exit the program
+	mov     rax, 60	; System call number for exit
+	mov     rdi, 0	; Exit code 0
+	syscall	; Invoke the kernel
