@@ -9,15 +9,12 @@
 void print_all(const char * const format, ...)
 {
 	va_list specifier;
-	int idx;
-	char *str;
-	char *delimeter = ", ";
+	int idx = 0;
+	char *str, *delimeter = ", ";
 
 	va_start(specifier, format);
-	idx = 0;
-
 	if (format == NULL)
-		return NULL;
+		exit(1);
 	while (format[idx] != '\0')
 	{
 		if (idx + 1 > 1)
@@ -49,6 +46,6 @@ void print_all(const char * const format, ...)
 		}
 		idx++;
 	}
-	 printf("\n");
+	printf("\n");
 	va_end(specifier);
 }
