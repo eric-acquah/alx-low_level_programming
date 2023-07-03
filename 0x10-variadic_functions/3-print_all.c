@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 	idx = 0;
 
 	if (format == NULL)
-		return;
+		return NULL;
 	while (format[idx] != '\0')
 	{
 		if (idx + 1 > 1)
