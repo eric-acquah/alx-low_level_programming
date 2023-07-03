@@ -6,8 +6,9 @@
 void print_all(const char * const format, ...)
 {
 	va_list specifier;
-	int idx = 0, sum = 0;
-	char *str, *d = ", ";
+	int idx = 0;
+	char *str;
+	char const *d = "";
 
 	va_start(specifier, format);
 	if (format != NULL)
@@ -17,29 +18,31 @@ void print_all(const char * const format, ...)
 			switch (format[idx])
 			{
 			case 'i':
-				printf("%d%s", va_arg(specifier, int), d);
+				printf("%s%d", d, va_arg(specifier, int));
+				d = ", ";
 				break;
 			case 'c':
-				printf("%c%s", (char)va_arg(specifier, int), d);
+				printf("%s%c", d, (char)va_arg(specifier, int));
+				d = ", ";
 				break;
 			case 'f':
-				printf("%f%s", va_arg(specifier, double), d);
+				printf("%s%f", d, va_arg(specifier, double));
+				d = ", ";
 				break;
 			case 's':
 				str = va_arg(specifier, char *);
 				switch (str == NULL)
 				{
 				case 1:
-					printf("(nil)%s", d);
+					printf("%s(nil)", d);
+					d = ", ";
 					break;
 				case 0:
-					printf("%s%s", str, d);
+					printf("%s%s", d, str);
+					d = ", ";
 				}
-				break;
 			}
-			sum += idx++;
-			if (idx < sum - 1)/*add ", " excluding the last value to print*/
-				d = "\0";
+			idx++;
 		}
 	}
 	printf("\n");
