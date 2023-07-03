@@ -15,6 +15,9 @@ void print_all(const char * const format, ...)
 
 	va_start(specifier, format);
 	idx = 0;
+
+	if (format == NULL)
+		return;
 	while (format[idx] != '\0')
 	{
 		if (idx + 1 > 1)
