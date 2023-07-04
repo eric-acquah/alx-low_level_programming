@@ -1,23 +1,21 @@
-	;;  Declare some constants
-	SECTION .data
-	msg:	    db      "Hello, Holberton", 10 ; string to print, 10 is newline
-	len:	    equ     $ - msg		   ; The length of the string
+	section .data
+	hello db "Hello, Holberton", 0
+	format db "%s", 10, 0
 
-	;;  Declare the text section
-	SECTION .text
-	global  main
+	section .text
+	extern printf
 
-	;;  The main function
+	global main
 main:
-	;;  Prepare the arguments for printf
-	mov     rdi, msg	; First argument is the message
-	mov     rsi, len	; Second argument is the length
-	mov     rax, 0	; No floating point arguments
+	sub rsp, 8
 
-	;;  Call printf
-	call    printf
+	mov rdi, format
+	mov rsi, hello
+	xor rax, rax
+	call printf
 
-	;;  Exit the program
-	mov     rax, 60	; System call number for exit
-	mov     rdi, 0	; Exit code 0
-	syscall	; Invoke the kernel
+	add rsp, 8
+
+	mov eax, 0x60
+	xor edi, edi
+	syscall
