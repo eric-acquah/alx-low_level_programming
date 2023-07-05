@@ -41,5 +41,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	for (j = 0; j < new_size && j < old_size; j++)
 		new_clone[j] = old_clone[j];
 
+	free(ptr);
+
 	return (resize);
 }
