@@ -1,5 +1,6 @@
 #include "main.h"
 #include "helper_functions.h"
+#define MAX_LEN 200
 
 /**
  *is_palindrome - retuen 1 if passed string is a palindrome
@@ -9,7 +10,7 @@
 int is_palindrome(char *str)
 {
 	int state;/*this will tell us whether str is palindome or not*/
-	char clone[50];/*to store a copy of str*/
+	char clone[MAX_LEN];/*to store a copy of str*/
 
 	_strcpy(clone, str);/*store a copy of the string*/
 
