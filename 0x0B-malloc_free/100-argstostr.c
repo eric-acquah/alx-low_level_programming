@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 		len_total += arg_len(av[i]);
 	}
 
-	str_store = (char *)malloc(sizeof(char) * (len_total));
+	str_store = (char *)malloc(sizeof(char) * (len_total + 1));
 
 	for (j = 0; j < len_total; j++)
 		str_store[j] = '\0';
