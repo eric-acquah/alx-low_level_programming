@@ -15,6 +15,9 @@ char *argstostr(int ac, char **av)
 	int len_total;
 	char *str_store;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
 	len_total = 0;
 
 	for (i = 0; i < ac; i++)
