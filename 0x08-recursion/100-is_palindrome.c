@@ -1,12 +1,11 @@
 #include "main.h"
-#include <stdio.h>
+#include "helper_functions.h"
 
 /**
  *is_palindrome - retuen 1 if passed string is a palindrome
  *@str: string to work on
  *Return: 1 if string is palindrome, 0 if not
  */
-
 int is_palindrome(char *str)
 {
 	int state;/*this will tell us whether str is palindome or not*/
