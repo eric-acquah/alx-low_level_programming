@@ -1,6 +1,6 @@
 #include "main.h"
 #include "helper_functions.h"
-#define MAX_LEN 200
+#define MAX_LEN 600
 
 /**
  *is_palindrome - retuen 1 if passed string is a palindrome
