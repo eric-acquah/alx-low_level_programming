@@ -31,8 +31,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (ptr == NULL)
 	{
-		free(ptr);
 		ptr = resize;
+		free(ptr);
 	}
 
 	new_clone = (char *)resize;
@@ -40,8 +40,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	for (j = 0; j < new_size && j < old_size; j++)
 		new_clone[j] = old_clone[j];
-
-	free(ptr);
 
 	return (resize);
 }
