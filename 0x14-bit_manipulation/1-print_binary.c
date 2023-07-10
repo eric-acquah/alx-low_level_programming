@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 {
 	int i, bit;
 	unsigned long int bimask;
-	int bitsize = sizeof(unsigned long int) * 8 - 1;
+	int bitsize = 64;
 	int firstbit = 1;
 
 	if (n == 0)
