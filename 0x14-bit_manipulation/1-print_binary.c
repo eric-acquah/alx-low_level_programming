@@ -10,11 +10,15 @@ void print_binary(unsigned long int n)
 {
 	int i, bit;
 	unsigned long int bimask;
-	int bitsize = 64;
+	int bitsize = sizeof(unsigned long int) * 8;
 	int firstbit = 1;
 
 	if (n == 0)
+	{
 		_putchar(n + '0');
+		_putchar('\n');
+		return;
+	}
 
 	/*this shift the significant bit set in 1 to the left=>(100000000)*/
 	bimask = 1UL << (bitsize - 1);/*UL(unsigned long) it ensure*/
