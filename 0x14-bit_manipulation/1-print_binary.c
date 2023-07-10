@@ -39,6 +39,5 @@ void print_binary(unsigned long int n)
 		bimask = bimask >> 1;
 
 	}
-	_putchar('\n');
 
 }
