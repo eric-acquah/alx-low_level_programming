@@ -16,7 +16,6 @@ void print_binary(unsigned long int n)
 	if (n == 0)
 	{
 		_putchar(n + '0');
-		_putchar('\n');
 		return;
 	}
 
@@ -46,6 +45,5 @@ void print_binary(unsigned long int n)
 		bimask = bimask >> 1;
 
 	}
-	_putchar('\n');
 
 }
