@@ -1,16 +1,14 @@
 #include "main.h"
-
 /**
  *print_binary - convert decimal numbers to binary and print the value
  *
  *@n: binary number argument
  */
-
 void print_binary(unsigned long int n)
 {
 	int i, bit;
 	unsigned long int bimask;
-	int bitsize = sizeof(unsigned long int) * 8;
+	int bitsize = sizeof(n) * 8;
 	int firstbit = 1;
 
 	if (n == 0)
@@ -25,11 +23,7 @@ void print_binary(unsigned long int n)
 
 	for (i = 0; i < bitsize; i++)
 	{
-		bit = (n & bimask);/*Operation to extract significant bits in*/
-		if (bit)
-			bit = 1;
-		else
-			bit = 0;
+		bit = (n & bimask) >> (bitsize - 1 - i);
 
 		if (firstbit && bit)/*This how we get rid of leading zeros*/
 		{
@@ -45,5 +39,6 @@ void print_binary(unsigned long int n)
 		bimask = bimask >> 1;
 
 	}
+	_putchar('\n');
 
 }
