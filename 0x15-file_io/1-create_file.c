@@ -27,13 +27,13 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		state = write(fdes, text_content, (size + 1));
+		state = write(fdes, text_content, size);
 	}
 
-	close(fdes);
 
 	if (state < 0)
 		return (-1);
 
+	close(fdes);
 	return (1);
 }
