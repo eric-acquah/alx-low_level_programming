@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	for (i = 63; i >= 0; i--)
 	{
-	        recent_bit = xor >> i;
+		recent_bit = xor >> i;
 		if (recent_bit & 1)
 			count++;
 	}
