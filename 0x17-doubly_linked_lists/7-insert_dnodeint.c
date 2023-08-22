@@ -17,14 +17,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	else if (idx >= list_len(*h) || idx < i)/*checking for invalid index*/
 		return (NULL);
-	else if (idx == 0)
+	else if (idx == 0 || *h == NULL)
 		newnode = add_dnodeint(h, n);/*if index is 0, insert at beginnig*/
 
 	newnode = (dlistint_t *)malloc(sizeof(dlistint_t));/*create the newnode*/
 	if (newnode == NULL)
 		return (NULL);/*check if malloc failed*/
 
-	while (i < idx)/*find the specified index*/
+	while (i < idx - 1)/*find the specified index*/
 	{
 		tmp = tmp->next;
 		i++;
