@@ -24,7 +24,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (newnode == NULL)
 		return (NULL);/*check if malloc failed*/
 
-	while (i < (idx - 1))/*find the specified index*/
+	while (i < idx)/*find the specified index*/
 	{
 		tmp = tmp->next;
 		i++;
@@ -35,8 +35,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/*else insert at the given position*/
 	newnode->n = n;
-	newnode->next = tmp->next;
 	newnode->prev = tmp;
+	newnode->next = tmp->next;
 	tmp->next = newnode;
 	newnode->next->prev = newnode;
 	return (newnode);
