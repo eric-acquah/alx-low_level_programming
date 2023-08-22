@@ -13,12 +13,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *newnode, *tmp = *h;
 
-	if (h == NULL) /*check if list does not exist*/
+	if (*h == NULL) /*check if list does not exist*/
 		return (NULL);
 	else if (idx >= list_len(*h) || idx < i)/*checking for invalid index*/
 		return (NULL);
-	else if (idx == 0 || *h == NULL)
+	else if (idx == 0)
+	{
 		newnode = add_dnodeint(h, n);/*if index is 0, insert at beginnig*/
+		return (newnode);
+	}
 
 	newnode = (dlistint_t *)malloc(sizeof(dlistint_t));/*create the newnode*/
 	if (newnode == NULL)
@@ -31,7 +34,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 
 	if (tmp->next == NULL)/*if index is last index insert at the end*/
+	{
 		newnode = add_dnodeint_end(h, n);
+		return (newnode);
+	}
 
 	/*else insert at the given position*/
 	newnode->n = n;
