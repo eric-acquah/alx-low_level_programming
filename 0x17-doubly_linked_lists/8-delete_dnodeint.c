@@ -2,6 +2,7 @@
 
 /**
  *delete_dnodeint_at_index - delete a node at a given index
+ *@head: pointer to head node pointer
  *@index: position at which node should be deleted
  *Return: 1 if successful esle 0
  */
@@ -13,7 +14,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (*head == NULL)
 		return (-1);
-	else if (index >= list_len(tmp) || index < i)
+	else if (i > index || index >= list_len(tmp))
 		return (-1);
 
 	if (index == 0) /*if index is head node, set next node prev to NULL*/
