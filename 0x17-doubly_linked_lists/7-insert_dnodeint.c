@@ -13,11 +13,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *newnode, *tmp = *h;
 
-	if (*h == NULL) /*check if list does not exist*/
+	/* if (*h == NULL) check if list does not exist */
+		/* return (NULL); */
+	if (idx >= list_len(*h) || idx < i)/*checking for invalid index*/
 		return (NULL);
-	else if (idx >= list_len(*h) || idx < i)/*checking for invalid index*/
-		return (NULL);
-	else if (idx == 0)
+	else if (idx == 0 || *h == NULL)
 	{
 		newnode = add_dnodeint(h, n);/*if index is 0, insert at beginnig*/
 		return (newnode);
