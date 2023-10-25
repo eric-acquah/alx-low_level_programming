@@ -6,8 +6,8 @@ NAME = school
 OBJ = school.o main.o
 
 
-all: m.h $(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+all: m.h school.o main.o
+	$(CC) -o $(NAME) school.o main.o
 
 
 school.o: m.h
