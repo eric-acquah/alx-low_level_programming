@@ -1,0 +1,7 @@
+# Building executable using the `all` rule and variable
+
+CC = gcc
+SRC = school.c main.c
+
+all: m.h
+	$(CC) -o school $(SRC)
