@@ -1,0 +1,18 @@
+# Building executable by first creating object files
+
+CC = gcc
+SRC = school.c main.c
+NAME = school
+OBJ = school.o main.o
+
+
+all: m.h $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+
+school.o: m.h
+	$(CC) -c school.c -o school.o
+
+
+main.o: m.h
+	$(CC) -c main.c -o main.o
