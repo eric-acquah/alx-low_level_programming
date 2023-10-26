@@ -1,0 +1,27 @@
+# The ultimate makefile
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+RM = rm
+NAME = school
+
+all: m.h $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+$(OBJ): m.h
+
+
+clean:
+	$(RM) -f *~ *.swp $(NAME)
+
+oclean:
+	$(RM) -f *.o
+
+
+fclean: clean oclean
+
+
+.PHONY: re
+
+re: fclean all
