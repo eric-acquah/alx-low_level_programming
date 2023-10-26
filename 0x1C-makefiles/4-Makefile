@@ -1,0 +1,31 @@
+# The ultimate makefile 2
+
+CFLAGS = -Wall -Wextra -Werror -pedantic
+CC = gcc
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o)
+RM = rm
+NAME = school
+
+
+all: $(NAME)
+
+$(NAME): m.h $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+$(OBJ): m.h
+
+
+clean:
+	$(RM) -f *~ *.swp $(NAME)
+
+oclean:
+	$(RM) -f *.o
+
+
+fclean: clean oclean
+
+
+.PHONY: re
+
+re: fclean all
