@@ -72,5 +72,5 @@ void print_array(int *arr, int left, int right)
 			printf("%d", arr[left]);
 		left++;
 	}
-	putchar('\n');
+	printf("\n");
 }
