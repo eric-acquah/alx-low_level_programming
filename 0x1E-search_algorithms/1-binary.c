@@ -12,45 +12,28 @@ int binary_search(int *array, size_t size, int value)
 {
 	int left = 0;
 	int right = (int)size - 1;
+	int mid;
 
 	if (array == NULL)
 		return (-1);
 
-	return (search(array, left, right, value));
-}
-
-/**
- *search - Recursively search for value in array
- *@arr: pointer to array to search
- *@left: start of array
- *@right: end of array
- *@value: value to be located
- *Return: index of found value, else -1
- */
-
-int search(int *arr, int left, int right, int value)
-{
-	int mid = (left + right) / 2;
-
-	/*Base case*/
-	if (left > right)
-		return (-1);
-
-	print_array(arr, left, right);
-
-	if (arr[mid] == value)
-		return (mid);
-
-	else if (value > arr[mid])
+	while (left <= right)
 	{
-		left = mid + 1;
-		search(arr, left, right, value);
+		mid = (left + right) / 2;
+
+		print_array(array, left, right);
+
+		if (array[mid] == value)
+			return (mid);
+
+		if (value > array[mid])
+			left = mid + 1;
+
+		else if (value < array[mid])
+			right = mid - 1;
 	}
-	else if (value < arr[mid])
-	{
-		right = mid - 1;
-		search(arr, left, right, value);
-	}
+
+	return (-1);
 }
 
 /**
